@@ -13,11 +13,14 @@ export class InfoPaginaService {
   constructor( private http: HttpClient ) { 
     console.log("Mensaje de prueba");
 
+    // Leer archivo JSON
     this.http.get('assets/data/data-pagina.json')
       .subscribe( (resp: InfoPagina) => {
+
         this.cargada = true;
         this.info = resp;
         console.log(resp);
+
       }); 
   }
 }
